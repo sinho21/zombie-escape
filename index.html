@@ -112,10 +112,26 @@
             </div>
         </div>
 
-        <!-- ===== HOW TO PLAY ===== -->
+                <!-- ===== HOW TO PLAY (ENGLISH VERSION) ===== -->
         <div id="howtoScreen" class="screen hidden">
             <div class="panel">
                 <h2 class="panel-title">📖 HOW TO PLAY</h2>
+                <ul class="howto-list">
+                    <li>🧟 <strong>Answer correctly</strong> to eliminate zombies</li>
+                    <li>💔 Wrong answer → zombie advances, you lose a life</li>
+                    <li>⏱ You start with 40 seconds. +3s for correct, -5s for wrong</li>
+                    <li>⭐ +100 points per zombie. +50 bonus if you answer in &lt;3s</li>
+                    <li>❤️ 3 lives. Game Over if you reach 0</li>
+                    <li>🏆 Top 10 saved in your browser</li>
+                </ul>
+                <button class="btn-primary" onclick="goToMenu()">← BACK</button>
+            </div>
+        </div>
+
+        <!-- ===== HOW TO PLAY 
+        <div id="howtoScreen" class="screen hidden">
+            <div class="panel">
+                <h2 class="panel-title">📖 HOW TO PLAY(SPANISH)</h2>
                 <ul class="howto-list">
                     <li>🧟 <strong>Responde correctamente</strong> para eliminar zombies</li>
                     <li>💔 Error → el zombie avanza, pierdes una vida</li>
@@ -126,7 +142,8 @@
                 </ul>
                 <button class="btn-primary" onclick="goToMenu()">← BACK</button>
             </div>
-        </div>
+        </div> ===== -->
+
 
         <!-- ===== CREDITS ===== -->
         <div id="creditsScreen" class="screen hidden">
@@ -137,6 +154,7 @@
                     <p>Top Notch Fundamentals (Units 7 & 8)</p>
                     <p>Diseño y código: <span class="highlight">Isacc Medrano</span></p>
                     <p>Más sobre mí: <span class="highlight"><a href="https://kingsoftweb.com/">Kingsoft Web </a></span></p>
+                    <p>Github: <span class="highlight"><a href="https://github.com/sinho21">sinho21</a></span></p>
                     <p class="credits-small">© 2026 · Todos los derechos reservados</p>
                 </div>
                 <button class="btn-primary" onclick="goToMenu()">← BACK</button>
