@@ -56,12 +56,7 @@ Cada zombie eliminado representa un concepto gramatical o vocabulario aprendido 
 
 ## 🚀 Demo en Vivo
 
-🔗 
-[![Jugar Ahora](https://img.shields.io/badge/▶️_Jugar_Ahora-FF3B3B?style=for-the-badge&logo=githubpages&logoColor=white)](https://sinho21.github.io/zombie-escape/)
-
-> 🧟 **Top Notch Fundamentals** (Units 7 & 8)  
-> Diseño y código: **Isacc Medrano**  
-[![Website](https://img.shields.io/badge/🌐_Mi_Sitio_Web-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://kingsoft.web)
+- **🔗 Demo**: [**Jugar ahora en GitHub Pages**](https://sinho21.github.io/zombie-escape/)
 
 ---
 
