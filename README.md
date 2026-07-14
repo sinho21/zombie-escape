@@ -30,4 +30,3 @@ This project is a game based on units 7 and 8 of the Top Notch book.
 ### Opción 3: Doble clic en index.html
 - Funciona, pero algunos navegadores pueden bloquear `localStorage` si se abre desde `file://`. Recomendamos Live Server o GitHub Pages.
 
-## 📂 Estructura del proyecto
