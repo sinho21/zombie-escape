@@ -1,4 +1,4 @@
-# 📄 README.md para GitHub (Sin Capturas)
+# 📄 README.md 
 
 ```markdown
 # 🧟 Zombie Escape · English Survival
@@ -56,7 +56,7 @@ Cada zombie eliminado representa un concepto gramatical o vocabulario aprendido 
 
 ## 🚀 Demo en Vivo
 
-🔗 [**Jugar ahora en GitHub Pages**](https://sinho21.github.io/zombie-escape/)
+- 🔗 [**Jugar ahora en GitHub Pages**](https://sinho21.github.io/zombie-escape/)
 
 ---
 
@@ -110,25 +110,25 @@ ZombieEscape/
 
 ---
 
-## 💻 Instalación y Ejecución
+💻 Instalación y Ejecución
 
-### Opción 1: GitHub Pages (Recomendado)
+Opción 1: GitHub Pages (Recomendado)
 1. **Fork** este repositorio
 2. Ve a **Settings → Pages**
 3. Selecciona la rama `main` y carpeta raíz (`/`)
 4. Guarda y espera unos minutos
 5. ¡Tu juego estará en `https://sinho21.github.io/zombie-escape/`!
 
-### Opción 2: Live Server (Desarrollo)
+Opción 2: Live Server (Desarrollo)
 ```bash
-# Clona el repositorio
+Clona el repositorio
 git clone https://github.com/sinho21/Zombie-escape.git
 
-# Abre con Visual Studio Code
+Abre con Visual Studio Code
 cd ZombieEscape
 code .
 
-# Instala Live Server y haz clic derecho en index.html → Open with Live Server
+Instala Live Server y haz clic derecho en index.html → Open with Live Server
 ```
 
 ### Opción 3: Ejecución Local (Sin servidor)
@@ -286,6 +286,7 @@ SOFTWARE.
 
 - **GitHub**: [@sinho21](https://github.com/sinho21)
 - **Demo**: [Zombie Escape](https://sinho21.github.io/zombie-escape/)
+
 
 ---
 
