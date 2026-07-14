@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🧟 Zombie Escape</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- ===== PANTALLA DE CARGA ===== -->
+        <div id="loadingScreen" class="screen active">
+            <div class="loading-content">
+                <h1 class="title-glitch">ZOMBIE ESCAPE</h1>
+                <p class="subtitle">ENGLISH SURVIVAL</p>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill" style="width: 0%;"></div>
+                </div>
+                <p id="loadingTip" class="loading-tip">💡 Responde rápido para +50 bonus</p>
+                <div class="loader-spinner"></div>
+            </div>
+        </div>
+
+        <!-- ===== MENÚ PRINCIPAL ===== -->
+        <div id="menuScreen" class="screen hidden">
+            <div class="menu-bg"></div>
+            <div class="menu-content">
+                <h1 class="title-glitch">ZOMBIE ESCAPE</h1>
+                <p class="subtitle">ENGLISH SURVIVAL</p>
+                <div class="menu-buttons">
+                    <button class="btn-primary" onclick="startGame()">▶ PLAY</button>
+                    <button class="btn-secondary" onclick="showRanking()">🏆 RANKING</button>
+                    <button class="btn-secondary" onclick="showHowTo()">📖 HOW TO PLAY</button>
+                    <button class="btn-secondary" onclick="showCredits()">🎮 CREDITS</button>
+                    <!-- NUEVO BOTÓN DE MÚSICA -->
+                    <button class="btn-secondary" onclick="toggleMusic()" id="musicToggleBtn">
+                        🔇 MÚSICA: ON
+                    </button>
+                </div>
+                <p class="menu-footer">v1.0 · Top Notch Fundamentals</p>
+            </div>
+        </div>
+
+        <!-- ===== JUEGO ===== -->
+        <div id="gameScreen" class="screen hidden">
+            <div class="game-container">
+                <!-- HUD -->
+                <div class="hud">
+                    <div class="hud-left">
+                        <span id="livesDisplay" class="hud-item">❤️❤️❤️</span>
+                        <span id="timerDisplay" class="hud-item">⏱ 40</span>
+                    </div>
+                    <div class="hud-center">
+                        <span id="scoreDisplay" class="hud-item">⭐ 0</span>
+                        <span id="accuracyDisplay" class="hud-item">🎯 0%</span>
+                    </div>
+                    <div class="hud-right">
+                        <span id="killsDisplay" class="hud-item">🧟 0</span>
+                    </div>
+                </div>
+
+                <!-- Campo de juego -->
+                <div class="game-field" id="gameField">
+                    <!-- Zombie -->
+                    <div class="zombie-wrapper" id="zombieWrapper">
+                        <div class="zombie-sprite" id="zombieSprite"></div>
+                        <div class="zombie-health">
+                            <div id="zombieHealth" style="width:100%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Burbuja de pregunta -->
+                    <div class="question-bubble">
+                        <p id="questionText" class="question-text">What time do you get up?</p>
+                        <div id="answersContainer" class="answers-grid">
+                            <button class="answer-btn" data-index="0">At 7:00</button>
+                            <button class="answer-btn" data-index="1">On Monday</button>
+                            <button class="answer-btn" data-index="2">In the morning</button>
+                            <button class="answer-btn" data-index="3">Every day</button>
+                        </div>
+                    </div>
+
+                    <!-- Efectos -->
+                    <div class="rain-effect"></div>
+                    <div class="fog-effect"></div>
+                </div>
+
+                <!-- Game Over -->
+                <div id="gameOverlay" class="game-overlay hidden">
+                    <div class="overlay-box">
+                        <h2 id="overlayTitle" class="overlay-title">💀 GAME OVER</h2>
+                        <p id="overlayStats" class="overlay-stats">Puntos: 0 · Zombies: 0</p>
+                        <button class="btn-primary" onclick="restartGame()">🔄 PLAY AGAIN</button>
+                        <button class="btn-secondary" onclick="goToMenu()">🏠 MENU</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== RANKING ===== -->
+        <div id="rankingScreen" class="screen hidden">
+            <div class="panel">
+                <h2 class="panel-title">🏆 TOP 10</h2>
+                <div id="rankingList" class="ranking-list"></div>
+                <div class="panel-actions">
+                    <button class="btn-danger" onclick="resetRanking()">🗑 RESET</button>
+                    <button class="btn-primary" onclick="goToMenu()">← BACK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== HOW TO PLAY ===== -->
+        <div id="howtoScreen" class="screen hidden">
+            <div class="panel">
+                <h2 class="panel-title">📖 HOW TO PLAY</h2>
+                <ul class="howto-list">
+                    <li>🧟 <strong>Responde correctamente</strong> para eliminar zombies</li>
+                    <li>💔 Error → el zombie avanza, pierdes una vida</li>
+                    <li>⏱ Comienzas con 40 segundos. +3s por acierto, -5s por error</li>
+                    <li>⭐ +100 puntos por zombie. +50 bonus si respondes en &lt;3s</li>
+                    <li>❤️ 3 vidas. Game Over si llegas a 0</li>
+                    <li>🏆 Top 10 guardado en tu navegador</li>
+                </ul>
+                <button class="btn-primary" onclick="goToMenu()">← BACK</button>
+            </div>
+        </div>
+
+        <!-- ===== CREDITS ===== -->
+        <div id="creditsScreen" class="screen hidden">
+            <div class="panel">
+                <h2 class="panel-title">🎮 CREDITS</h2>
+                <div class="credits-content">
+                    <p><strong>Zombie Escape · English Survival</strong></p>
+                    <p>Top Notch Fundamentals (Units 7 & 8)</p>
+                    <p>Diseño y código: <span class="highlight">Isacc Medrano</span></p>
+                    <p>Diseño y código: <span class="highlight"><a href="https://kingsoftweb.com/">Kingsoft Web </a></span></p>
+                    <p class="credits-small">© 2026 · Todos los derechos reservados</p>
+                </div>
+                <button class="btn-primary" onclick="goToMenu()">← BACK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
